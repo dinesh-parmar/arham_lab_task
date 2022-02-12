@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:arham_labs/utils/extensions.dart';
-
 class ContentDetail {
   ContentDetail({
     this.status,

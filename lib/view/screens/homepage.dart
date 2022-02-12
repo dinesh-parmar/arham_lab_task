@@ -91,7 +91,7 @@ class ContentView extends StatelessWidget {
           title: contents[index].title,
           imageUrlTb: contents[index].thumbnailUrl,
         ),
-        separatorBuilder: (BuildContext context, int index) => const SizedBox(width: 20),
+        separatorBuilder: (BuildContext _, int __) => const SizedBox(width: 20),
       ),
     );
   }

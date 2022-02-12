@@ -9,11 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignUpScreen extends StatelessWidget {
-  SignUpScreen({Key? key}) : super(key: key);
+  SignUpScreen({Key? key, required this.onRegistered}) : super(key: key);
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passAgainController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   final userDatabaseController = Get.put(UsersDatabase());
+  final VoidCallback onRegistered;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,12 @@ class SignUpScreen extends StatelessWidget {
                     AVTextField(
                       label: "Email address",
                       controller: _emailController,
-                      validator: emailValidator(),
+                      validator: (value) {
+                        if (emailValidator()(value) == null) {
+                          return userDatabaseController.checkIfAlreadyExist(value!);
+                        }
+                        return null;
+                      },
                       maxLength: 20,
                       inputType: TextInputType.emailAddress,
                       formatters: commonInputFormatter,
@@ -66,6 +73,7 @@ class SignUpScreen extends StatelessWidget {
                       maxLength: 8,
                     ),
                     AVTextField(
+                      controller: _passAgainController,
                       label: "Password again",
                       autovalidateMode: AutovalidateMode.disabled,
                       obscureText: true,
@@ -92,6 +100,8 @@ class SignUpScreen extends StatelessWidget {
                 if (_formKey.currentState?.validate() != true) return;
                 final newUser = User(emailId: _emailController.text, password: _passwordController.text);
                 userDatabaseController.registerUser(newUser);
+                onRegistered();
+                emptyTexFields();
               },
               isLoginPage: false,
             ),
@@ -99,5 +109,11 @@ class SignUpScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void emptyTexFields() {
+    _emailController.clear();
+    _passwordController.clear();
+    _passAgainController.clear();
   }
 }

@@ -54,7 +54,7 @@ class _LoginHomePageState extends State<LoginHomePage> with SingleTickerProvider
               flex: 4,
               child: TabBarView(
                 controller: _tabController,
-                children: [LoginScreen(), SignUpScreen()],
+                children: [LoginScreen(), SignUpScreen(onRegistered: () => _tabController.animateTo(0))],
               ),
             ),
           ],

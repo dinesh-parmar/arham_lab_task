@@ -1,5 +1,6 @@
 import 'package:arham_labs/utils/extensions.dart';
 import 'package:arham_labs/utils/routes.dart';
+import 'package:arham_labs/view/widget/platform_cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

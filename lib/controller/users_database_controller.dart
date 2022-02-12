@@ -1,8 +1,10 @@
 import 'dart:convert';
-
 import 'package:arham_labs/model/common/user.dart';
+import 'package:arham_labs/utils/common_dialogs.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../utils/constants.dart';
 
 class UsersDatabase extends GetxController {
   late final SharedPreferences prefs;
@@ -17,9 +19,19 @@ class UsersDatabase extends GetxController {
   }
 
   void registerUser(User user) async {
+    Get.dialog(const AlertDialog(content: SizedBox(height: 100, child: centeredProgressIndicator))); //Show Progress Dialog
     usersDatabase.add(jsonEncode(user));
     await prefs.setStringList('usersDatabase', usersDatabase);
-    print("new Database is ${prefs.getStringList('usersDatabase')}");
+    await Future.delayed(300.milliseconds);
+    Get.back(); //Get back from Progress Dialog
+    showSimpleDialog("User Registered", message: "Thank you for registering with us. You can now proceed to Login");
+    // print("new Database is ${prefs.getStringList('usersDatabase')}");
+  }
+
+  String? checkIfAlreadyExist(String emaild) {
+    final index = usersDatabase.indexWhere((element) => jsonDecode(element)["emailId"] == emaild);
+    if (index != -1) return "This E-mail Already Exist";
+    return null;
   }
 
   int findUser(User user) => usersDatabase.indexWhere((element) => User.fromJson(Map<String, String>.from(jsonDecode(element))) == user);

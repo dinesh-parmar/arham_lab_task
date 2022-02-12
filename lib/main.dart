@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:arham_labs/controller/user_controller.dart';
 import 'package:arham_labs/utils/routes.dart';
 import 'package:arham_labs/view/screens/auth/login_home_page.dart';
 import 'package:arham_labs/view/screens/content_detail_screen.dart';
 import 'package:arham_labs/view/screens/homepage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      scrollBehavior: kIsWeb ? MyCustomScrollBehavior() : null,
       title: "Arham Labs Task",
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -31,4 +35,12 @@ class MyApp extends StatelessWidget {
       ],
     );
   }
+}
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
