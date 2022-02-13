@@ -8,7 +8,7 @@ final commonInputFormatter = [FilteringTextInputFormatter.allow(RegExp("[a-zA-Z0
 const commonSpace = SizedBox(height: 20);
 
 String getUrlForService(String path) {
-  const getBaseUrl = "http://demo2142051.mockable.io";
+  const getBaseUrl = "https://demo2142051.mockable.io";
   return getBaseUrl + path;
 }
 
