@@ -27,6 +27,7 @@ class UserController extends GetxController {
   }
 
   bool checkAlreadyLogin() {
+    /// Check whether user is already logged in. Returns true when alraedy login
     if (kDebugMode) print("User id is ${prefs.getInt('userId')}");
     return prefs.containsKey('userId');
   }

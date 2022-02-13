@@ -29,6 +29,7 @@ class UsersDatabase extends GetxController {
   }
 
   String? checkIfAlreadyExist(String emaild) {
+    /// To be used in validator when signing up. It will check whether user email is already in the database
     final index = usersDatabase.indexWhere((element) => jsonDecode(element)["emailId"] == emaild);
     if (index != -1) return "This E-mail Already Exist";
     return null;

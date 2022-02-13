@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  /// ScrollBehaviour for Web. Mouse tap and drag can be used to scroll across Horizontal Axis
   @override
   Set<PointerDeviceKind> get dragDevices => {
         PointerDeviceKind.touch,

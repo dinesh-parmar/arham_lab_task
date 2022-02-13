@@ -10,5 +10,6 @@ class GeneralResponse<T> {
 
   GeneralResponse({this.data, this.statusCode, this.success, this.dioError});
 
+  /// Handling in UI when the API returns any error
   void showErrorDialog() => showSimpleDialog("Status Code: $statusCode", message: dioError?.message ?? "Something went wrong");
 }

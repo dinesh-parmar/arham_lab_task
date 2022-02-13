@@ -86,7 +86,7 @@ class LoginScreen extends StatelessWidget {
               final userId = _userDatabaseController.findUser(tryingUser);
               print("Got User id is $userId");
               if (userId == -1) {
-                showSimpleDialog("Invalid User", message: "Sorry< We can't find you in our database. Please register if you are new.");
+                showSimpleDialog("Invalid User", message: "Sorry, We can't find you in our database. Please register if you are new.");
               } else {
                 _userController.login(tryingUser, userId, shouldNavigateToHome: true);
               }

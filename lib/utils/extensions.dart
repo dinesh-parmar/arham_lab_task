@@ -8,6 +8,7 @@ extension StringX on String {
     return this[0].toUpperCase() + substring(1).toLowerCase();
   }
 
+  /// Remove trailing commas from the JSON String
   String removeTrailingCommas() {
     const String _regexp = '\\,(?!\\s*?[\\{\\[\\"\'\\w])';
     print("Formatted is ${replaceAll(RegExp(_regexp), "")}");

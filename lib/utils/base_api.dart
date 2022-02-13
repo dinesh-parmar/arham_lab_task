@@ -1,4 +1,4 @@
-import 'package:arham_labs/model/responses/general_response.dart';
+import 'package:arham_labs/model/general_response.dart';
 import 'package:dio/dio.dart';
 
 mixin BaseApi {

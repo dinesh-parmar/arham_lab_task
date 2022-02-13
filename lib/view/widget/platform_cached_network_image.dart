@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+/// Multiplatform Cached Network Image Widget
 class PlatformCachedNetworkImage extends StatelessWidget {
   final String imageUrl;
   final double? width;

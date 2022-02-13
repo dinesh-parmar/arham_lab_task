@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/// TextFormField with [TextFormField.autoValidateMode] set to [AutovalidateMode.onUserInteraction]
 class AVTextField extends StatelessWidget {
   final String? label;
   final int? maxLength;

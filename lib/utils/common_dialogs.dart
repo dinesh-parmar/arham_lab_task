@@ -10,6 +10,7 @@ void showSimpleDialog(String title, {String? message}) => Get.dialog(
       ),
     );
 
+/// Confirmation dialog which will return true when User presses on "Yes".
 Future<bool?> showCofirmationDialog(String title, {String? message}) => Get.dialog<bool>(AlertDialog(
       title: Text(title),
       content: message != null ? Text(message) : null,

@@ -15,9 +15,7 @@ class ContentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Get.toNamed(Routes.contentPage, arguments: imageUrlTb);
-      },
+      onTap: () => Get.toNamed(Routes.contentPage),
       child: AspectRatio(
         aspectRatio: 16 / 9,
         child: Stack(

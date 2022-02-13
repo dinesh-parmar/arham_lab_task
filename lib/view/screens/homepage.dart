@@ -41,12 +41,15 @@ class HomePage extends StatelessWidget {
                     children: [
                       commonSpace,
                       const Text("Videos", style: TextStyles.boldBodyText),
+                      commonSpace,
                       if (_contentHome.videos != null) ContentView(contents: _contentHome.videos!, isVideo: true),
                       commonSpace,
                       const Text("Blogs", style: TextStyles.boldBodyText),
+                      commonSpace,
                       if (_contentHome.blogs != null) ContentView(contents: _contentHome.blogs!, isVideo: false),
                       commonSpace,
                       const Text("Mini Courses", style: TextStyles.boldBodyText),
+                      commonSpace,
                       if (_contentHome.miniCourses != null) ContentView(contents: _contentHome.miniCourses!, isVideo: true, isMiniCourse: true)
                     ],
                   ),
