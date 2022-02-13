@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(web LANGUAGES CXX)
+project(arham_labs LANGUAGES CXX)
 
-set(BINARY_NAME "web")
+set(BINARY_NAME "arham_labs")
 
 cmake_policy(SET CMP0063 NEW)
 
