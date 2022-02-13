@@ -10,6 +10,7 @@ import 'package:arham_labs/view/widget/login_page_bottom_part.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+///Login Screen
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
 

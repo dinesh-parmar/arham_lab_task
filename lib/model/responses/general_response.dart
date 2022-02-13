@@ -2,6 +2,7 @@ import 'package:arham_labs/utils/common_dialogs.dart';
 import 'package:dio/dio.dart';
 
 class GeneralResponse<T> {
+  /// GeneralResponse will be used for creating a object with [data] having the response dart model.
   final T? data;
   final int? statusCode;
   final bool? success;

@@ -2,8 +2,10 @@ import 'package:arham_labs/model/responses/content_home.dart';
 import 'package:arham_labs/model/responses/general_response.dart';
 import 'package:arham_labs/services/api/content_api.dart';
 import 'package:arham_labs/utils/base_api.dart';
+import 'package:arham_labs/view/screens/homepage.dart';
 import 'package:get/get.dart';
 
+/// This service is called in [HomePage]
 class ContentHomeService extends GetxController with BaseApi {
   final contentApi = ContentApi();
   final isLoading = false.obs;

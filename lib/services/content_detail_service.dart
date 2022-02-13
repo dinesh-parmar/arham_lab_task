@@ -4,6 +4,7 @@ import 'package:arham_labs/services/api/content_api.dart';
 import 'package:arham_labs/utils/base_api.dart';
 import 'package:get/get.dart';
 
+/// Service which calls the content_detail API.
 class ContentDetailService extends GetxController with BaseApi {
   final contentApi = ContentApi();
   final isLoading = false.obs;

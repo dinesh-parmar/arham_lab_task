@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:arham_labs/model/responses/content_detail.dart';
 import 'package:arham_labs/model/responses/content_home.dart';
 import 'package:arham_labs/utils/constants.dart';
@@ -7,6 +5,7 @@ import 'package:arham_labs/utils/helpers.dart';
 import 'package:arham_labs/utils/extensions.dart';
 import 'package:dio/dio.dart';
 
+///Abstraction of API path in a class so that we can put more services in a single class and add more parameters like query.
 class ContentApi {
   static const _contentHomePath = "/content_home";
   static const _contentDetailPath = "/content_detail";

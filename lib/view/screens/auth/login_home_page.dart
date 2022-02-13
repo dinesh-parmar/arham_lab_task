@@ -3,6 +3,7 @@ import 'package:arham_labs/view/screens/auth/login_screen.dart';
 import 'package:arham_labs/view/screens/auth/signup_screen.dart';
 import 'package:flutter/material.dart';
 
+///LoginHomePage contains both [LoginScreen] and [SignUpScreen]
 class LoginHomePage extends StatefulWidget {
   const LoginHomePage({Key? key}) : super(key: key);
 

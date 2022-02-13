@@ -1,15 +1,17 @@
+import 'package:arham_labs/controller/user_controller.dart';
 import 'package:arham_labs/model/responses/content_home.dart';
 import 'package:arham_labs/services/content_service.dart';
 import 'package:arham_labs/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../widget/content_card.dart';
 
+/// MainHomePage of the Screen when user is already logged in
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
   final ContentHomeService contentHomeService = Get.put(ContentHomeService());
+  final _userController = Get.put(UserController());
 
   ContentHome get _contentHome => contentHomeService.contentHome.value;
 
@@ -21,6 +23,12 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         title: const Text("Content", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 32)),
+        actions: [
+          IconButton(
+            onPressed: () => _userController.logout(),
+            icon: const Icon(Icons.logout, size: 30, color: Colors.black),
+          ),
+        ],
       ),
       body: SafeArea(
         minimum: const EdgeInsets.only(left: 15),

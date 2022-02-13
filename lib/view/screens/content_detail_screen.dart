@@ -14,8 +14,8 @@ class ContentDetailScreen extends StatelessWidget {
 
   ContentDetail get _contentDetail => contentDetailController.contentDetail.value;
 
-  final DateFormat dateFormat1 = DateFormat('MM/dd/yyyy hh:mm');
-  final DateFormat dateFormat2 = DateFormat.yMMMd().add_jm();
+  final DateFormat dateFormat1 = DateFormat('MM/dd/yyyy hh:mm'); //Formatter to get DateTime object from APIResponse
+  final DateFormat dateFormat2 = DateFormat.yMMMd().add_jm(); //Formatter to format the DateTime object to Human Readable
 
   String get publishedTime {
     final dt = dateFormat1.parse("${_contentDetail.blogDetail!.publishDate} ${_contentDetail.blogDetail!.publishTime}");
