@@ -1,16 +1,21 @@
 # arham_labs
 
-A new Flutter project.
+Task Submission for ArhamLab
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+###Demo
 
-A few resources to get you started if this is your first Flutter project:
+1. Web Version for the Mobile App is availaible on [Heroku](https://content-task.herokuapp.com/). Please open this in Mobile browser only.
+2. Apk is available [here](https://drive.google.com/drive/folders/1qH__8RDyvQFLuGdGelKKtLYt3eb0oLkU?usp=sharing)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+###ScreenShots
+1. SignupScreen
+   ![SignupScreen](app_screenshots/signup_screen.jpg)
+2. LoginScreen
+    ![LoginScreen](app_screenshots/login_screen.jpg)
+3. ContentHome
+    ![ContentHome](app_screenshots/content_home.jpg)
+4. ContentDetail
+    ![ContentDetail](app_screenshots/content_detail.jpg)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
