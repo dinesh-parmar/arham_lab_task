@@ -22,6 +22,7 @@ class SignUpScreen extends StatelessWidget {
     return Form(
       key: _formKey,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const Spacer(),
           const Padding(
